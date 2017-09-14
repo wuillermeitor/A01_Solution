@@ -19,9 +19,29 @@ void first_it_v(std::vector<int>v1) {
 }
 
 void second_it_v(std::vector<int>v1) {
-	for (std::vector<int>::iterator it = v1.begin(); it != v1.end();++it) {
+	for (std::vector<int>::iterator it = v1.begin(); it != v1.end(); ++it) {
 		std::cout << *it;
-		if (it !=v1.end()-1) {
+		if (it != v1.end() - 1) {
+			std::cout << ", ";
+		}
+	}
+	std::cout << std::endl;
+}
+
+void third_it_v(std::vector<int>v1) {
+	for (auto e : v1) {
+		std::cout << e;
+		if (e > v1.size()-1) {
+			std::cout << ", ";
+		}
+	}
+	std::cout << std::endl;
+}
+
+void fourth_it_v(std::vector<int>v1) {
+	for (std::vector<int>::reverse_iterator it = v1.rbegin(); it != v1.rend(); ++it) {
+		std::cout << *it;
+		if (it != v1.rend() - 1) {
 			std::cout << ", ";
 		}
 	}
@@ -40,10 +60,13 @@ int main() {
 	v1.push_back(0);
 	v1.push_back(2);
 	v1.push_back(6);
+	v5.pop_back();
+	v5.push_back(3);
 
 	first_it_v(v1);
 	second_it_v(v2);
-
+	third_it_v(v5);
+	fourth_it_v(v6);
 
 
 	return 0;
