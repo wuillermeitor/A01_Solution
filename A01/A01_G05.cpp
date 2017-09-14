@@ -8,13 +8,24 @@
 #include <map>
 #include <set>
 
-void first_it_v(std::vector<int>v1){
+void first_it_v(std::vector<int>v1) {
 	for (int i = 0; i < v1.size(); i++) {
 		std::cout << v1[i];
 		if (i < v1.size() - 1) {
 			std::cout << ", ";
 		}
 	}
+	std::cout << std::endl;
+}
+
+void second_it_v(std::vector<int>v1) {
+	for (std::vector<int>::iterator it = v1.begin(); it != v1.end();++it) {
+		std::cout << *it;
+		if (it !=v1.end()-1) {
+			std::cout << ", ";
+		}
+	}
+	std::cout << std::endl;
 }
 
 int main() {
@@ -31,6 +42,7 @@ int main() {
 	v1.push_back(6);
 
 	first_it_v(v1);
+	second_it_v(v2);
 
 
 
