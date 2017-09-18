@@ -1,13 +1,13 @@
 #include <iostream>
 #include <vector>
 #include <deque>
-#include <queue>
-#include <stack>
 #include <list>
 #include <forward_list>
 #include <map>
 #include <set>
 
+
+//VECTOR
 void first_it_v(std::vector<int>v1) {
 	for (int i = 0; i < v1.size(); i++) {
 		std::cout << v1[i] << " ";
@@ -36,7 +36,7 @@ void fourth_it_v(std::vector<int>v1) {
 	std::cout << std::endl;
 }
 
-
+//DEQUE
 void first_it_d(std::deque<int>d1) {
 	for (int i = 0; i < d1.size(); i++) {
 		std::cout << d1[i] << " ";
@@ -65,8 +65,83 @@ void fourth_it_d(std::deque<int>d1) {
 	std::cout << std::endl;
 }
 
+//LIST
+void second_it_l(std::list<int>l1) {
+	for (std::list<int>::iterator it = l1.begin(); it != l1.end(); ++it) {
+		std::cout << *it << " ";
+	}
+	std::cout << std::endl;
+}
+
+void third_it_l(std::list<int>l1) {
+	for (auto e : l1) {
+		std::cout << e << " ";
+	}
+	std::cout << std::endl;
+}
+
+void fourth_it_l(std::list<int>l1) {
+	for (std::list<int>::reverse_iterator it = l1.rbegin(); it != l1.rend(); ++it) {
+		std::cout << *it << " ";
+	}
+	std::cout << std::endl;
+}
+
+//FORWARD LIST
+void second_it_l(std::forward_list<int>fl1) {
+	for (std::forward_list<int>::iterator it = fl1.begin(); it != fl1.end(); ++it) {
+		std::cout << *it << " ";
+	}
+	std::cout << std::endl;
+}
+
+void third_it_l(std::forward_list<int>fl1) {
+	for (auto e : fl1) {
+		std::cout << e << " ";
+	}
+	std::cout << std::endl;
+}
+
+//MAP
+void second_it_l(std::map<int, int>m1) {
+	for (auto it = m1.begin(); it != m1.end(); ++it) {
+		std::cout << it->first << " => " << it->second << "\n";
+	}
+	std::cout << std::endl;
+}
+
+void fourth_it_l(std::map<int, int>m1) {
+	for (auto it = m1.rbegin(); it != m1.rend(); ++it) {
+		std::cout << it->first << " => " << it->second << "\n";
+	}
+	std::cout << std::endl;
+}
+
+//SET
+void second_it_l(std::set<int>s1) {
+	for (std::set<int>::iterator it = s1.begin(); it != s1.end(); ++it) {
+		std::cout << *it << " ";
+	}
+	std::cout << std::endl;
+}
+
+void third_it_l(std::set<int>s1) {
+	for (auto e : s1) {
+		std::cout << e << " ";
+	}
+	std::cout << std::endl;
+}
+
+void fourth_it_l(std::set<int>s1) {
+	for (std::set<int>::reverse_iterator it = s1.rbegin(); it != s1.rend(); ++it) {
+		std::cout << *it << " ";
+	}
+	std::cout << std::endl;
+}
+
 
 int main() {
+
 	//VECTOR
 	std::vector<int>v1;//Constructor sin argumentos
 	std::vector<int>v2({ 5,4,6,7,2});//constructor con lista de inicialización
@@ -101,6 +176,8 @@ int main() {
 	fourth_it_d(d4);
 
 	std::cout << std::endl;
+
+	//list
 
 	return 0;
 }
