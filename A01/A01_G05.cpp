@@ -144,11 +144,11 @@ int main() {
 
 	//VECTOR
 	std::vector<int>v1;//Constructor sin argumentos
-	std::vector<int>v2({ 5,4,6,7,2});//constructor con lista de inicialización
+	std::vector<int>v2({ 5,4,6,7,2 });//constructor con lista de inicialización
 	std::vector<int>v3(v2);//constructor por copia
 	std::vector<int>v4(5);//constructor con 5 elementos inicializados en 0
 	std::vector<int>v5(5, 6);//copnstructor con 5 elementos inicializados en 6
-	std::vector<int>v6(v2.begin(),v2.end());//constructor con interadores copiando v2
+	std::vector<int>v6(v2.begin(), v2.end());//constructor con interadores copiando v2
 	v1.push_back(9);
 	v1.push_back(8);
 	v1.push_back(0);
@@ -177,7 +177,92 @@ int main() {
 
 	std::cout << std::endl;
 
-	//list
+	//LIST
+	std::list<int>l1;//Constructor sin argumentos
+	std::list<int>l2({ 8, 1, 3, 6, 2 });//constructor con lista de inicialización
+	std::list<int>l3(l2);//constructor por copia
+	std::list<int>l4(5);//constructor con 5 elementos inicializados en 0
+	std::list<int>l5(5, 3);//copnstructor con 5 elementos inicializados en 6
+	std::list<int>l6(l2.begin(), l2.end());//constructor con interadores copiando v2
+	l1.push_back(9);
+	l1.push_back(8);
+	l1.push_back(0);
+	l1.push_back(2);
+	l1.push_back(6);
+	l5.pop_back();
+	l5.push_back(8);
+
+	second_it_l(l2);
+	third_it_l(l5);
+	fourth_it_l(l6);
+
+	std::cout << std::endl;
+
+	//FORWARD LIST
+	std::forward_list<int>fl1;//Constructor sin argumentos
+	std::forward_list<int>fl2({ 5,4,6,7,2 });//constructor con lista de inicialización
+	std::forward_list<int>fl3(fl2);//constructor por copia
+	std::forward_list<int>fl4(5);//constructor con 5 elementos inicializados en 0
+	std::forward_list<int>fl5(5, 6);//copnstructor con 5 elementos inicializados en 6
+	std::forward_list<int>fl6(fl2.begin(), fl2.end());//constructor con interadores copiando v2
+	fl1.push_front(9);
+	fl1.push_front(8);
+	fl1.push_front(0);
+	fl1.push_front(2);
+	fl1.push_front(6);
+	fl5.pop_front();
+	fl5.push_front(3);
+
+	first_it_v(v1);
+	second_it_v(v2);
+	third_it_v(v5);
+	fourth_it_v(v6);
+
+	std::cout << std::endl;
+
+	//MAP
+	std::vector<int>v1;//Constructor sin argumentos
+	std::vector<int>v2({ 5,4,6,7,2 });//constructor con lista de inicialización
+	std::vector<int>v3(v2);//constructor por copia
+	std::vector<int>v4(5);//constructor con 5 elementos inicializados en 0
+	std::vector<int>v5(5, 6);//copnstructor con 5 elementos inicializados en 6
+	std::vector<int>v6(v2.begin(), v2.end());//constructor con interadores copiando v2
+	v1.push_back(9);
+	v1.push_back(8);
+	v1.push_back(0);
+	v1.push_back(2);
+	v1.push_back(6);
+	v5.pop_back();
+	v5.push_back(3);
+
+	first_it_v(v1);
+	second_it_v(v2);
+	third_it_v(v5);
+	fourth_it_v(v6);
+
+	std::cout << std::endl;
+
+	//SET
+	std::vector<int>v1;//Constructor sin argumentos
+	std::vector<int>v2({ 5,4,6,7,2 });//constructor con lista de inicialización
+	std::vector<int>v3(v2);//constructor por copia
+	std::vector<int>v4(5);//constructor con 5 elementos inicializados en 0
+	std::vector<int>v5(5, 6);//copnstructor con 5 elementos inicializados en 6
+	std::vector<int>v6(v2.begin(), v2.end());//constructor con interadores copiando v2
+	v1.push_back(9);
+	v1.push_back(8);
+	v1.push_back(0);
+	v1.push_back(2);
+	v1.push_back(6);
+	v5.pop_back();
+	v5.push_back(3);
+
+	first_it_v(v1);
+	second_it_v(v2);
+	third_it_v(v5);
+	fourth_it_v(v6);
+
+	std::cout << std::endl;
 
 	return 0;
 }
