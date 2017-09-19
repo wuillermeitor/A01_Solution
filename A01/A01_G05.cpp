@@ -88,14 +88,14 @@ void fourth_it_l(std::list<int>l1) {
 }
 
 //FORWARD LIST
-void second_it_l(std::forward_list<int>fl1) {
+void second_it_fl(std::forward_list<int>fl1) {
 	for (std::forward_list<int>::iterator it = fl1.begin(); it != fl1.end(); ++it) {
 		std::cout << *it << " ";
 	}
 	std::cout << std::endl;
 }
 
-void third_it_l(std::forward_list<int>fl1) {
+void third_it_fl(std::forward_list<int>fl1) {
 	for (auto e : fl1) {
 		std::cout << e << " ";
 	}
@@ -118,21 +118,21 @@ void fourth_it_l(std::map<int, int>m1) {
 }
 
 //SET
-void second_it_l(std::set<int>s1) {
+void second_it_s(std::set<int>s1) {
 	for (std::set<int>::iterator it = s1.begin(); it != s1.end(); ++it) {
 		std::cout << *it << " ";
 	}
 	std::cout << std::endl;
 }
 
-void third_it_l(std::set<int>s1) {
+void third_it_s(std::set<int>s1) {
 	for (auto e : s1) {
 		std::cout << e << " ";
 	}
 	std::cout << std::endl;
 }
 
-void fourth_it_l(std::set<int>s1) {
+void fourth_it_s(std::set<int>s1) {
 	for (std::set<int>::reverse_iterator it = s1.rbegin(); it != s1.rend(); ++it) {
 		std::cout << *it << " ";
 	}
@@ -213,10 +213,8 @@ int main() {
 	fl5.pop_front();
 	fl5.push_front(3);
 
-	first_it_v(v1);
-	second_it_v(v2);
-	third_it_v(v5);
-	fourth_it_v(v6);
+	second_it_fl(fl2);
+	third_it_fl(fl5);
 
 	std::cout << std::endl;
 
@@ -243,24 +241,22 @@ int main() {
 	std::cout << std::endl;
 
 	//SET
-	std::vector<int>v1;//Constructor sin argumentos
-	std::vector<int>v2({ 5,4,6,7,2 });//constructor con lista de inicialización
-	std::vector<int>v3(v2);//constructor por copia
-	std::vector<int>v4(5);//constructor con 5 elementos inicializados en 0
-	std::vector<int>v5(5, 6);//copnstructor con 5 elementos inicializados en 6
-	std::vector<int>v6(v2.begin(), v2.end());//constructor con interadores copiando v2
-	v1.push_back(9);
-	v1.push_back(8);
-	v1.push_back(0);
-	v1.push_back(2);
-	v1.push_back(6);
-	v5.pop_back();
-	v5.push_back(3);
+	std::set<int>s1;//Constructor sin argumentos
+	std::set<int>s2({ 5,4,6,7,2 });//constructor con lista de inicialización
+	std::set<int>s3(s2);//constructor por copia
+	std::set<int>s5(5, 6);//copnstructor con 5 elementos inicializados en 6
+	std::set<int>s6(s2.begin(), s2.end());//constructor con interadores copiando v2
+	s1.insert(9);
+	s1.insert(8);
+	s1.insert(0);
+	s1.insert(2);
+	s1.insert(6);
+	s5.erase(5);
+	s5.insert(3);
 
-	first_it_v(v1);
-	second_it_v(v2);
-	third_it_v(v5);
-	fourth_it_v(v6);
+	second_it_s(s2);
+	third_it_s(s5);
+	fourth_it_s(s6);
 
 	std::cout << std::endl;
 
